@@ -50,7 +50,7 @@ bothdata$subject <- as.factor(bothdata$subject)
 
 tidy_data_set = aggregate(bothdata, by=list(activity = bothdata$activity, subject=bothdata$subject), mean)
 
-# Remove the subject and activity column, since a mean of those has no use
+# Removing the subject and activity 
 tidy_data_set[,90] = NULL
 tidy_data_set[,89] = NULL
 write.table(tidy_data_set, "tidy_data_set.txt", sep="\t")
